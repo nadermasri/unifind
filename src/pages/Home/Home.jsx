@@ -5,30 +5,31 @@ import ChooseSection from '../../components/ChooseSection/ChooseSection';
 import StartCoursesImg from '../../utils/images/start-courses-img.jpg';
 import FaqAccordion from '../../components/FaqAccordion/FaqAccordion';
 import { Card } from 'react-bootstrap';
-import Blog1Img from '../../utils/images/blog1-img.jpg';
-import Blog2Img from '../../utils/images/blog2-img.jpg';
-import Blog3Img from '../../utils/images/blog3-img.jpg';
+import AUBlogo from '../../utils/images/aublogo.png';
+import LAUlogo from '../../utils/images/laulogo.jpg';
+import BAUlogo from '../../utils/images/baulogo.jpg';
 
-const blogs = [
+const universities = [
     {
         id: 1,
-        img: [Blog1Img],
-        title: 'Blog 1',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        img: [AUBlogo],
+        name: 'American University of Beirut',
+        description: 'The American University of Beirut (AUB) offers a diverse range of programs and state-of-the-art facilities. Known for its strong emphasis on research and academic excellence, AUB is located in the heart of Beirut, providing students with a vibrant and dynamic campus life.'
     },
     {
         id: 2,
-        img: [Blog2Img],
-        title: 'Blog 2',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        img: [LAUlogo],
+        name: 'Lebanese American University',
+        description: 'The Lebanese American University (LAU) is renowned for its innovative research programs and inclusive campus environment. With a strong focus on student development and community engagement, LAU offers a rich academic experience in both its Beirut and Byblos campuses.'
     },
     {
         id: 3,
-        img: [Blog3Img],
-        title: 'Blog 3',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.'
+        img: [BAUlogo],
+        name: 'Beirut Arab University',
+        description: 'Beirut Arab University (BAU) is recognized for its affordable tuition fees and diverse extracurricular activities. Located in Beirut, BAU provides a supportive learning environment with a variety of programs designed to cater to the academic and personal growth of its students.'
     }
 ];
+
 
 function Home() {
   return (
@@ -36,11 +37,11 @@ function Home() {
         <header className='h-100 min-vh-100 d-flex align-items-center text-light'>
             <div className='container d-flex flex-column align-items-center'>
                 <h2>Welcome To</h2>
-                <h1 className='text-center fw-semibold'>React University London</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque, fugit? Doloremque deserunt ipsum eaque, dolor tempore, minima nisi debitis, et quas voluptatibus nam ex. Necessitatibus eligendi ratione expedita! Porro, ut.</p>
+                <h1 className='text-center fw-semibold'>UniFind</h1>
+                <p>Find your dream university in Lebanon with all the essential information you need at your fingertips. Explore programs, compare tuition fees, and get insights into campus life.</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center'>
-                    <Link to="/courses">
-                        <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Our Courses</button>
+                    <Link to="/">
+                        <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Start Your Search</button>
                     </Link>
                     <Link to="/contact">
                         <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Contact Us</button>
@@ -57,9 +58,9 @@ function Home() {
             <div className="container">
                 <div className='row d-flex align-items-center justify-content-around'>
                     <div className='col-lg-5'>
-                        <h2 className='text-capitalize'>2024 start courses</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, placeat.</p>
-                        <Link to="/courses">
+                        <h2 className='text-capitalize'>2024 Start Your Journey</h2>
+                        <p>Discover the top universities in Lebanon and find the perfect fit for your academic and personal growth.</p>
+                        <Link to="/search">
                             <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Learn More</button>
                         </Link>
                     </div>
@@ -76,24 +77,24 @@ function Home() {
 
         <div className='blog-section text-light py-5'>
             <div className='container d-flex flex-column align-items-center'>
-                <h2 className='text-center text-capitalize mb-5'>Latest on the blog</h2>
+                <h2 className='text-center text-capitalize mb-5'>Featured Universities</h2>
                 <div className='row g-4'>
-                    {blogs.map((blog) => (
-                        <div key={blog.id} className='col-md-6 col-lg-4'>
-                            <Link to="/blog" className='text-decoration-none'>
+                    {universities.map((uni) => (
+                        <div key={uni.id} className='col-md-6 col-lg-4'>
+                            <Link to={`/university/${uni.id}`} className='text-decoration-none'>
                                 <Card className='h-100 shadow scale-hover-effect'>
-                                    <Card.Img variant="top" src={blog.img} />
+                                    <Card.Img variant="top" src={uni.img} />
                                     <Card.Body className='p-md-5'>
-                                        <Card.Title>{blog.title}</Card.Title>
-                                        <Card.Text>{blog.description}</Card.Text>
+                                        <Card.Title>{uni.name}</Card.Title>
+                                        <Card.Text>{uni.description}</Card.Text>
                                     </Card.Body>
                                 </Card>
                             </Link>
                         </div>
                     ))}
                 </div>
-                <Link to="/blog">
-                    <button type='button' className='btn btn-danger btn-lg mt-5'>Read More Blogs</button>
+                <Link to="/Colleges">
+                    <button type='button' className='btn btn-danger btn-lg mt-5'>View All Universities</button>
                 </Link>
             </div>
         </div>

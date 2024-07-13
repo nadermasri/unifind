@@ -4,7 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import LondonLocationImg from '../../utils/images/London-location.jpg';
+import BeirutImg from '../../utils/images/beirutimage.jpg';
 import ManchesterLocationImg from '../../utils/images/Manchester-location.jpg';
 import LiverpoolLocationImg from '../../utils/images/Liverpool-location.jpg';
 
@@ -73,15 +73,15 @@ function Contact() {
                 <h2 className='text-center mb-5'>Our Locations</h2>
                 <div className='row g-4'>
                     <div className='col-lg-4 d-flex flex-column align-items-center'>
-                        <img src={LondonLocationImg} className='img-fluid' alt="" />
-                        <h3 className='text-center mt-3'>London</h3>
+                        <img src={BeirutImg} className='img-fluid location-image' alt="Beirut" />
+                        <h3 className='text-center mt-3'>Beirut</h3>
                     </div>
                     <div className='col-lg-4 d-flex flex-column align-items-center'>
-                        <img src={ManchesterLocationImg} className='img-fluid' alt="" />
+                        <img src={ManchesterLocationImg} className='img-fluid location-image' alt="Manchester" />
                         <h3 className='text-center mt-3'>Manchester</h3>
                     </div>
                     <div className='col-lg-4 d-flex flex-column align-items-center'>
-                        <img src={LiverpoolLocationImg} className='img-fluid' alt="" />
+                        <img src={LiverpoolLocationImg} className='img-fluid location-image' alt="Liverpool" />
                         <h3 className='text-center mt-3'>Liverpool</h3>
                     </div>
                 </div>

@@ -1,84 +1,61 @@
-# React JS University Website Project | Tutorial for Beginners
+# UniFind
 
-## First Part YouTube link - [React JS University Website Project | Tutorial for Beginners - PART 1](https://youtu.be/v5GmKHncNB8?si=rkyGaFEDfJx_IFIr)
-## Second Part YouTube link - [React JS Project University Website Tutorial With Bootstrap 5 From Scratch - PART 2](https://youtu.be/KnncqbOLwo4?si=H_0O4W_56iP5pKeJ)
+UniFind is a web application designed to help students find information about various universities. This project includes details about different universities, their programs, tuition fees, ranking, research opportunities, and more.
 
-<img src="React JS University Website Img.jpg" alt="React JS University Website" />
+## Table of Contents
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Pages](#pages)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
 
-## For this website I used:
-- [React JS](https://react.dev/)
-- [Visual Studio Code Editor](https://code.visualstudio.com/)
-- [Bootstrap 5](https://getbootstrap.com/) - CSS Framework
-- [Google Fonts](https://fonts.google.com/) - Montserrat Family Font
-- [Unsplash](https://unsplash.com/) - Free Images
+## Features
+- Home page with a brief introduction.
+- Detailed information about universities including programs, tuition, ranking, etc.
+- A contact form to get in touch.
+- Navbar for easy navigation between pages.
+- Footer with social media links and contact information.
 
-# Getting Started with Create React App
+## Installation
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/unifind.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd unifind
+    ```
+3. Install the dependencies:
+    ```bash
+    npm install
+    ```
+4. Start the development server:
+    ```bash
+    npm start
+    ```
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usage
+Once the development server is running, you can access the application at `http://localhost:3000`.
 
-## Available Scripts
+## Pages
+- **Home**: The landing page with a brief introduction about UniFind.
+- **Colleges**: A list of colleges with links to detailed pages.
+- **Students**: Information and resources for students.
+- **About Us**: Information about the creators of UniFind.
+- **Contact**: A form to get in touch with the UniFind team.
 
-In the project directory, you can run:
+## Contributing
+Contributions are welcome! Please fork the repository and submit a pull request.
 
-### `npm start`
+## License
+This project is licensed under the MIT License.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Authors
+- Nader Al Masri
+- Hussein Chamseddine
+- Hussein Chour
+- Ahmad Dimashkieh
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We are students from the American University of Beirut studying Computer and Communications Engineering, except Hussein Chour who is studying Mechanical Engineering.
