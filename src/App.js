@@ -11,6 +11,7 @@ import AboutUs from './pages/AboutUs/AboutUs';
 import Contact from './pages/Contact/Contact';
 import UniversityDetail from './pages/UniversityDetail/UniversityDetail';
 import logo from './logounifind.png';
+import Search from './pages/Search/Search';
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
         <Route path='/students' element={<Students />} />
         <Route path='/about-us' element={<AboutUs />} />
         <Route path='/contact' element={<Contact />} />
+        <Route path='/search' element={<Search />} />
       </Routes>
 
       <footer>

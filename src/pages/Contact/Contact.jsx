@@ -14,7 +14,7 @@ function Contact() {
         <header className='height-75'>
             <div className='container h-100 d-flex flex-column align-items-center justify-content-center text-light'>
                 <h1 className='text-center fw-semibold'>Get In Touch</h1>
-                <p className='text-center w-75 mb-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae pariatur qui quos aspernatur, voluptatem autem possimus esse quo consequatur omnis, soluta consectetur ullam ipsum cum!</p>
+                {/* <p className='text-center w-75 mb-5'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae pariatur qui quos aspernatur, voluptatem autem possimus esse quo consequatur omnis, soluta consectetur ullam ipsum cum!</p> */}
             </div>
         </header>
 

@@ -40,7 +40,7 @@ function Home() {
                 <h1 className='text-center fw-semibold'>UniFind</h1>
                 <p>Find your dream university in Lebanon with all the essential information you need at your fingertips. Explore programs, compare tuition fees, and get insights into campus life.</p>
                 <div className='d-flex flex-column flex-sm-row align-items-center'>
-                    <Link to="/">
+                    <Link to="/search">
                         <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Start Your Search</button>
                     </Link>
                     <Link to="/contact">
