@@ -21,7 +21,7 @@ UniFind is a web application designed to help students find information about va
 ## Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/unifind.git
+    git clone https://github.com/nadermasri/unifind.git
     ```
 2. Navigate to the project directory:
     ```bash
