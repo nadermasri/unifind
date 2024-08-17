@@ -40,6 +40,7 @@ const reviews = [
     //     name: 'Lea Haddad',
     //     review: 'AUST has been an incredible place to study. The emphasis on research and academic excellence, combined with a supportive community, has made my university experience unforgettable.'
     // },
+    
 ];
 
 function Students() {
