@@ -43,8 +43,8 @@ function Home() {
                     <Link to="/search">
                         <button type='button' className='btn btn-danger btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Start Your Search</button>
                     </Link>
-                    <Link to="/contact">
-                        <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>Contact Us</button>
+                    <Link to="/colleges">
+                        <button type='button' className='btn btn-outline-light btn-lg mx-0 mx-sm-2 my-2 my-sm-0'>View All</button>
                     </Link>
                 </div>
             </div>
@@ -81,7 +81,7 @@ function Home() {
                 <div className='row g-4'>
                     {universities.map((uni) => (
                         <div key={uni.id} className='col-md-6 col-lg-4'>
-                            <Link to={`/university/${uni.id}`} className='text-decoration-none'>
+                            <Link to={`/colleges/${uni.id}`} className='text-decoration-none'>
                                 <Card className='h-100 shadow scale-hover-effect'>
                                     <Card.Img variant="top" src={uni.img} />
                                     <Card.Body className='p-md-5'>

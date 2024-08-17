@@ -1,37 +1,32 @@
 import React from 'react';
 import './Students.css';
 import { Card } from 'react-bootstrap';
-import NaderMasripic from '../../utils/images/NaderAlMasripicture.jpeg';
-import AhmadDimashkieh from '../../utils/images/ahmaddimashkiehpicture.jpeg';
-import HusseinChamseddine from '../../utils/images/husseinchamseddinepicture.jpeg';
-import HusseinChour from '../../utils/images/husseinchourpicture.jpeg';
-// import Student5 from '../../utils/images/student5.jpg';
-// import Student6 from '../../utils/images/student6.jpg';
+
 
 const reviews = [
     {
         id: 1,
-        img: NaderMasripic,
+        img: 'https://unifindimages.s3.eu-west-2.amazonaws.com/NaderAlMasripicture.jpeg',
         name: 'Nader Al Masri',
-        review: 'My experience at AUB has been exceptional. The faculty and the facilities are top-notch. I highly recommend this university to anyone seeking quality education.'
+        review: 'My experience at AUB has been exceptional. The faculty and the facilities are top-notch. I highly recommend this university to anyone seeking quality education. Contact me at nma119@mail.aub.edu for advice!'
     },
     {
         id: 2,
-        img: AhmadDimashkieh,
+        img: 'https://unifindimages.s3.eu-west-2.amazonaws.com/ahmaddimashkiehpicture.jpeg',
         name: 'Ahmad Dimashkieh',
-        review: 'LAU has provided me with incredible opportunities both academically and socially. The supportive environment and the vibrant campus life make it an excellent choice.'
+        review: 'LAU has provided me with incredible opportunities both academically and socially. The supportive environment and the vibrant campus life make it an excellent choice. Contact me at afd08@mail.aub.edu for advice!'
     },
     {
         id: 3,
-        img: HusseinChamseddine,
+        img: 'https://unifindimages.s3.eu-west-2.amazonaws.com/husseinchamseddinepicture.jpeg',
         name: 'Hussein Chameseddine',
-        review: 'BAU is a great place to study. The affordable tuition fees and diverse extracurricular activities have enriched my university experience. I feel well-prepared for my future career.'
+        review: 'BAU is a great place to study. The affordable tuition fees and diverse extracurricular activities have enriched my university experience. I feel well-prepared for my future career. Contact me at hmc16@mail.aub.edu for advice!'
     },
     {
         id: 4,
-        img: HusseinChour,
+        img: 'https://unifindimages.s3.eu-west-2.amazonaws.com/husseinchourpicture.jpeg',
         name: 'Hussein Chour',
-        review: 'USJ offers a wide range of programs and a supportive learning environment. The focus on academic excellence and community engagement has made my time here truly valuable.'
+        review: 'USJ offers a wide range of programs and a supportive learning environment. The focus on academic excellence and community engagement has made my time here truly valuable. Contact me at hac24@mail.aub.edu for advice!'
     },
     // {
     //     id: 5,

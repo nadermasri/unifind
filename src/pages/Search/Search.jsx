@@ -1,38 +1,56 @@
-// src/pages/Search/Search.jsx
-
 import React, { useState } from 'react';
+import axios from 'axios';
 import './search.css';
 import { Card, Form, Button, Row, Col } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import logo from '../../logounifind.png';
+
 
 function Search() {
   const [criteria, setCriteria] = useState({
-    acceptanceRate: '',
-    accessibilityServices: '',
-    gradCreditCost: '',
-    undergradCreditCost: '',
-    financialAid: '',
-    languageTaught: '',
-    location: '',
-    publicCarpoolingServices: '',
-    rankingLebanon: '',
-    rankingQS: '',
-    research: '',
+    AcceptanceRate: '',
+    AccessibilityServices: '',
+    GradCreditCost: '',
+    UndergradCreditCost: '',
+    FinancialAid: '',
+    LanguageTaught: '',
+    Location: '',
+    PublicCarpoolingServices: '',
+    Ranking_Lebanon: '',
+    Ranking_QS: '',
+    Research: '',
   });
+
+  const [results, setResults] = useState([]); // State to hold the search results
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setCriteria({ ...criteria, [name]: value });
   };
 
-  const handleSearch = (e) => {
+  const handleSearch = async (e) => {
     e.preventDefault();
-    console.log('Search Criteria:', criteria);
-    // Implement search logic here using the criteria
+    
+    // Create a payload by only including non-empty criteria
+    const payload = {};
+    if (criteria.AcceptanceRate) payload.AcceptanceRate = Number(criteria.AcceptanceRate);
+    if (criteria.AccessibilityServices) payload.AccessibilityServices = criteria.AccessibilityServices === 'true';
+    if (criteria.GradCreditCost) payload.GradCreditCost = Number(criteria.GradCreditCost);
+    if (criteria.UndergradCreditCost) payload.UndergradCreditCost = Number(criteria.UndergradCreditCost);
+    if (criteria.FinancialAid) payload.FinancialAid = criteria.FinancialAid === 'true';
+    if (criteria.LanguageTaught) payload.LanguageTaught = criteria.LanguageTaught;
+    if (criteria.Location) payload.Location = criteria.Location;
+    if (criteria.PublicCarpoolingServices) payload["Public/Carpooling_Services"] = criteria.PublicCarpoolingServices === 'true';
+    if (criteria.Ranking_Lebanon) payload.Ranking_Lebanon = Number(criteria.Ranking_Lebanon);
+    if (criteria.Ranking_QS) payload.Ranking_QS = Number(criteria.Ranking_QS);
+    if (criteria.Research) payload.Research = criteria.Research === 'true';
+
+    console.log('Search Payload:', payload);
+
+    try {
+      const response = await axios.post('https://twum8afws8.execute-api.eu-west-2.amazonaws.com/prod/filterInput', payload);
+      setResults(response.data); // Update results with the response from the API
+    } catch (error) {
+      console.error('Error fetching search results:', error);
+    }
   };
 
   return (
@@ -51,9 +69,9 @@ function Search() {
                 <Form.Label>Acceptance Rate (%)</Form.Label>
                 <Form.Control
                   type="number"
-                  name="acceptanceRate"
+                  name="AcceptanceRate"
                   placeholder="Enter minimum acceptance rate"
-                  value={criteria.acceptanceRate}
+                  value={criteria.AcceptanceRate}
                   onChange={handleInputChange}
                 />
               </Form.Group>
@@ -61,9 +79,9 @@ function Search() {
                 <Form.Label>Graduate Credit Cost</Form.Label>
                 <Form.Control
                   type="number"
-                  name="gradCreditCost"
+                  name="GradCreditCost"
                   placeholder="Enter maximum graduate credit cost"
-                  value={criteria.gradCreditCost}
+                  value={criteria.GradCreditCost}
                   onChange={handleInputChange}
                 />
               </Form.Group>
@@ -71,29 +89,32 @@ function Search() {
                 <Form.Label>Undergraduate Credit Cost</Form.Label>
                 <Form.Control
                   type="number"
-                  name="undergradCreditCost"
+                  name="UndergradCreditCost"
                   placeholder="Enter maximum undergraduate credit cost"
-                  value={criteria.undergradCreditCost}
+                  value={criteria.UndergradCreditCost}
                   onChange={handleInputChange}
                 />
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Location</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="location"
-                  placeholder="Enter location"
-                  value={criteria.location}
+                <Form.Select
+                  name="Location"
+                  value={criteria.Location}
                   onChange={handleInputChange}
-                />
+                >
+                  <option value="">Select...</option>
+                  <option value="Beirut">Beirut</option>
+                  <option value="Byblos">Byblos</option>
+                  <option value="Debbieh">Debbieh</option>
+                </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Ranking in Lebanon</Form.Label>
                 <Form.Control
                   type="number"
-                  name="rankingLebanon"
+                  name="Ranking_Lebanon"
                   placeholder="Enter maximum ranking in Lebanon"
-                  value={criteria.rankingLebanon}
+                  value={criteria.Ranking_Lebanon}
                   onChange={handleInputChange}
                 />
               </Form.Group>
@@ -101,9 +122,9 @@ function Search() {
                 <Form.Label>Ranking QS</Form.Label>
                 <Form.Control
                   type="number"
-                  name="rankingQS"
+                  name="Ranking_QS"
                   placeholder="Enter maximum QS ranking"
-                  value={criteria.rankingQS}
+                  value={criteria.Ranking_QS}
                   onChange={handleInputChange}
                 />
               </Form.Group>
@@ -112,59 +133,62 @@ function Search() {
               <Form.Group className="mb-3">
                 <Form.Label>Accessibility Services</Form.Label>
                 <Form.Select
-                  name="accessibilityServices"
-                  value={criteria.accessibilityServices}
+                  name="AccessibilityServices"
+                  value={criteria.AccessibilityServices}
                   onChange={handleInputChange}
                 >
                   <option value="">Select...</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Financial Aid</Form.Label>
                 <Form.Select
-                  name="financialAid"
-                  value={criteria.financialAid}
+                  name="FinancialAid"
+                  value={criteria.FinancialAid}
                   onChange={handleInputChange}
                 >
                   <option value="">Select...</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Language Taught</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="languageTaught"
-                  placeholder="Enter language"
-                  value={criteria.languageTaught}
+                <Form.Select
+                  name="LanguageTaught"
+                  value={criteria.LanguageTaught}
                   onChange={handleInputChange}
-                />
+                >
+                  <option value="">Select...</option>
+                  <option value="English">English</option>
+                  <option value="French">French</option>
+                  <option value="Arabic">Arabic</option>
+                </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Public/Carpooling Services</Form.Label>
                 <Form.Select
-                  name="publicCarpoolingServices"
-                  value={criteria.publicCarpoolingServices}
+                  name="PublicCarpoolingServices"
+                  value={criteria.PublicCarpoolingServices}
                   onChange={handleInputChange}
                 >
                   <option value="">Select...</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
                 </Form.Select>
               </Form.Group>
               <Form.Group className="mb-3">
                 <Form.Label>Research</Form.Label>
                 <Form.Select
-                  name="research"
-                  value={criteria.research}
+                  name="Research"
+                  value={criteria.Research}
                   onChange={handleInputChange}
                 >
                   <option value="">Select...</option>
-                  <option value="yes">Yes</option>
-                  <option value="no">No</option>
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
                 </Form.Select>
               </Form.Group>
             </Col>
@@ -176,16 +200,24 @@ function Search() {
 
         <div className="search-results">
           <h3 className="text-center">Search Results</h3>
-          {/* Display search results here */}
-          <Card className="mt-4">
-            <Card.Body>
-              <Card.Title>University Name</Card.Title>
-              <Card.Text>
-                Description and details about the university.
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          {results.length === 0 ? (
+            <p>No universities found matching your criteria.</p>
+          ) : (
+            results.map((university, index) => (
+              <Card className="mt-4" key={index}>
+               
+                <Card.Body>
+                  <Card.Title>{university}</Card.Title>
+                  <Card.Text>
+                    {/* Add more details or a brief description if necessary */}
+                  </Card.Text>
+                </Card.Body>
+              
+              </Card>
+            ))
+          )}
         </div>
+
       </div>
     </div>
   );
