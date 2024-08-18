@@ -55,6 +55,7 @@ Explore the platform by navigating through the various pages to find the univers
 - **Students**: Resources and information tailored for students.
 - **About Us**: Background information about the UniFind team and the motivation behind the project.
 - **Contact**: A form for users to submit inquiries or feedback.
+- **Search**: A page where students/users can search for the university based on the criteria they want to filter.
 
 ## Contributing
 
